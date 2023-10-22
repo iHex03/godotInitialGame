@@ -18,9 +18,11 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8q3i"]
 albedo_texture = ExtResource("1_q7j22")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ukti5"]
+material = SubResource("StandardMaterial3D_j8q3i")
 size = Vector2(100, 100)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oe684"]
@@ -34,7 +36,6 @@ environment = SubResource("Environment_4bk8y")
 [node name="Ground" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-material_override = SubResource("StandardMaterial3D_j8q3i")
 mesh = SubResource("PlaneMesh_ukti5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D"]
