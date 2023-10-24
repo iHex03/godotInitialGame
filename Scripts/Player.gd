@@ -10,8 +10,9 @@ const JUMP_VELOCITY = 4.5
 
 var is_locked = true
 
-@onready var animation = $AnimationPlayer
-@onready var hitbox = $CameraPivot/Camera3D/MeleeWeapon/WeaponMesh/Hitbox
+@onready var animation = $CameraPivot/Camera3D/WeaponManager/AnimationPlayer
+@onready var hitbox = $CameraPivot/Camera3D/WeaponManager/Sword/hitbox
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -58,18 +59,4 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	if Input.is_action_just_pressed("attack"):
-		animation.play("attack")
-		hitbox.monitoring = true
-
 	move_and_slide()
-
-func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "attack":
-		animation.play("idle")
-		hitbox.monitoring = false
-
-
-func _on_hitbox_area_entered(area):
-	if area.is_in_group("enemy"):
-		print("acertou")

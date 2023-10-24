@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy5my5opghwws"]
+
+[ext_resource type="PackedScene" uid="uid://c8dxw5upanygs" path="res://Assets/Models/Weapons for Itch with image texture.fbx_Arming_Sword.fbx" id="1_83yve"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mf156"]
+size = Vector3(0.2, 0.1, 1)
+
+[node name="Sword" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="Sword_mesh" parent="." instance=ExtResource("1_83yve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014011, 0, 0.0635663)
+
+[node name="hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4)
+shape = SubResource("BoxShape3D_mf156")
+
+[editable path="Sword_mesh"]
