@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s1ifmiho1e8r"
-path.s3tc="res://.godot/imported/Weapons for Itch with image texture_Low Poly Weapon Texture.png-199b46f6c26b0fc16d7966759c31faf3.s3tc.ctex"
+path.s3tc="res://.godot/imported/Weapon Texture.png-8c874090997b4809097a30cae0908b5d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Models/Weapons for Itch with image texture_Low Poly Weapon Texture.png"
-dest_files=["res://.godot/imported/Weapons for Itch with image texture_Low Poly Weapon Texture.png-199b46f6c26b0fc16d7966759c31faf3.s3tc.ctex"]
+source_file="res://Assets/Models/Weapon Texture.png"
+dest_files=["res://.godot/imported/Weapon Texture.png-8c874090997b4809097a30cae0908b5d.s3tc.ctex"]
 
 [params]
 

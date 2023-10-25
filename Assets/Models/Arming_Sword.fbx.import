@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c8dxw5upanygs"
-path="res://.godot/imported/Weapons for Itch with image texture.fbx_Arming_Sword.fbx-c666749da6f361bc74399509568dd353.scn"
+path="res://.godot/imported/Arming_Sword.fbx-6671ffd3a2b5592807d39650a5eb8866.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Weapons for Itch with image texture.fbx_Arming_Sword.fbx"
-dest_files=["res://.godot/imported/Weapons for Itch with image texture.fbx_Arming_Sword.fbx-c666749da6f361bc74399509568dd353.scn"]
+source_file="res://Assets/Models/Arming_Sword.fbx"
+dest_files=["res://.godot/imported/Arming_Sword.fbx-6671ffd3a2b5592807d39650a5eb8866.scn"]
 
 [params]
 

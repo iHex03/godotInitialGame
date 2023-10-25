@@ -7,6 +7,7 @@ script = ExtResource("1_r1eli")
 Weapon_Name = "Sword"
 Activate_Anim = "Sword Activate"
 Attack_Anim = "Sword Attack"
+Attack_Anim2 = "Sword Attack2"
 Deactivate_Anim = "Sword Deactivate"
 Attack_Speed = 0.5
 Weapon_Damage = 1.0

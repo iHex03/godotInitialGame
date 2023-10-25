@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://446n1yuuxl77"]
+[gd_scene load_steps=20 format=3 uid="uid://446n1yuuxl77"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cqimo"]
 [ext_resource type="Script" path="res://Scripts/WeaponManager.gd" id="2_82bi5"]
 [ext_resource type="PackedScene" uid="uid://cy5my5opghwws" path="res://Scenes/sword.tscn" id="2_yu3cy"]
+[ext_resource type="Resource" uid="uid://0v3yndinx5o" path="res://Scripts/Weapon resources/Sword_res.tres" id="3_alsco"]
+[ext_resource type="PackedScene" uid="uid://bug4xw8gpotqp" path="res://Assets/Models/Crossbow.fbx" id="5_c7fvv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ebjmx"]
 
@@ -19,7 +21,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector3(0.458234, -0.130314, -0.481124), Vector3(0.458234, -0.193785, -0.481124)]
 }
@@ -31,7 +33,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector3(1.5708, 1.5708, 0), Vector3(1.48941, 1.5708, -4.37114e-08)]
 }
@@ -43,7 +45,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(-2),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
@@ -86,6 +88,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sword:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_i6024"]
 resource_name = "Sword Activate"
@@ -114,10 +128,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-1.18234, 1.5708, -4.37114e-08), Vector3(1.5708, 1.5708, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_4y784"]
 resource_name = "Sword Attack"
-length = 0.5
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -126,7 +152,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(-2),
+"transitions": PackedFloat32Array(-10),
 "update": 0,
 "values": [Vector3(0.572024, -0.130314, -0.481124)]
 }
@@ -137,8 +163,8 @@ tracks/1/path = NodePath("Sword:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(-2, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-10, -10),
 "update": 0,
 "values": [Vector3(0.258309, -1.49051, -3.13112), Vector3(0.425918, -0.810541, -3.09315)]
 }
@@ -149,10 +175,10 @@ tracks/2/path = NodePath(".:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(-2, -2),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-10, -10),
 "update": 0,
-"values": [Vector3(-0.349066, 0, 0), Vector3(-0.349066, 1.65806, 0)]
+"values": [Vector3(-0.349066, 0, 0), Vector3(-0.349066, 1.91986, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_2tf6r"]
@@ -182,6 +208,58 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(1.5708, 1.5708, 0), Vector3(-1.18234, 1.5708, -4.37114e-08)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_cysik"]
+resource_name = "Sword Attack2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-10),
+"update": 0,
+"values": [Vector3(0.572024, -0.130314, -0.481124)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-10, -10),
+"update": 0,
+"values": [Vector3(0.635499, -0.707145, 2.53549), Vector3(0.554203, -1.04488, 2.45376)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-10, -10),
+"update": 0,
+"values": [Vector3(0, 1.8326, 0), Vector3(-0.698132, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0748q"]
 _data = {
@@ -189,6 +267,7 @@ _data = {
 "RESET": SubResource("Animation_vf77n"),
 "Sword Activate": SubResource("Animation_i6024"),
 "Sword Attack": SubResource("Animation_4y784"),
+"Sword Attack2": SubResource("Animation_cysik"),
 "Sword Deactivate": SubResource("Animation_2tf6r")
 }
 
@@ -228,22 +307,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_wfrvp")
 
 [node name="CameraPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 
 [node name="WeaponManager" type="Node3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("2_82bi5")
+_weapon_resourses = Array[Resource("res://Scripts/weapon_resource.gd")]([ExtResource("3_alsco")])
+Start_Weapons = Array[String](["Sword"])
 
 [node name="Sword" parent="CameraPivot/Camera3D/WeaponManager" instance=ExtResource("2_yu3cy")]
 transform = Transform3D(-3.61999e-06, 1, -3.61999e-06, 0, -3.61999e-06, -1, -1, -3.61999e-06, 1.31043e-11, 0.458234, -0.130314, -0.481124)
+visible = false
 
 [node name="Sword_mesh" parent="CameraPivot/Camera3D/WeaponManager/Sword" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="Crossbow" parent="CameraPivot/Camera3D/WeaponManager" instance=ExtResource("5_c7fvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.543285, -0.560437, -0.910704)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D/WeaponManager"]
-playback_default_blend_time = 0.05
+playback_default_blend_time = 0.1
 libraries = {
 "": SubResource("AnimationLibrary_0748q")
 }

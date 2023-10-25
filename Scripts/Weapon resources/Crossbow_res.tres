@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=2 format=3 uid="uid://dhbygyp03xs8l"]
+
+[ext_resource type="Script" path="res://Scripts/weapon_resource.gd" id="1_msx8t"]
+
+[resource]
+script = ExtResource("1_msx8t")
+Weapon_Name = "Crossbow"
+Activate_Anim = "Crossbow Activate"
+Attack_Anim = ""
+Attack_Anim2 = ""
+Deactivate_Anim = "Crossbow Deactivate"
+Ranged = true
+Attack_Speed = 1.0
+Weapon_Damage = 1.0

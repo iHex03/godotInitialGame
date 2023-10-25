@@ -8,7 +8,7 @@ var sens_vertical = 0.3
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-var is_locked = true
+var is_locked:bool = true
 
 @onready var animation = $CameraPivot/Camera3D/WeaponManager/AnimationPlayer
 @onready var hitbox = $CameraPivot/Camera3D/WeaponManager/Sword/hitbox
