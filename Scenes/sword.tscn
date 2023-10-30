@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cy5my5opghwws"]
 
-[ext_resource type="PackedScene" uid="uid://c8dxw5upanygs" path="res://Assets/Models/Weapons for Itch with image texture.fbx_Arming_Sword.fbx" id="1_83yve"]
+[ext_resource type="PackedScene" uid="uid://c8dxw5upanygs" path="res://Assets/Models/Arming_Sword.fbx" id="1_83yve"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mf156"]
 size = Vector3(0.2, 0.1, 1)

@@ -22,6 +22,7 @@ var last_anim
 
 func _ready():
 	Initialize(Start_Weapons)
+	print(Weapon_List)
 
 func Initialize(_start_weapons: Array):
 	for weapon in _weapon_resourses:
@@ -36,15 +37,23 @@ func Initialize(_start_weapons: Array):
 func enter():
 	animation.queue(Current_Weapon.Activate_Anim)
 
-func exit(_nest_weapon: String):
-	pass
+func exit(_next_weapon: String):
+	if _next_weapon != Current_Weapon.Weapon_Name:
+		if animation.get_current_animation() != Current_Weapon.Deactivate_Anim:
+			animation.play(Current_Weapon.Deactivate_Anim)
+			Next_Weapon = _next_weapon
+
+func Change_Weapon(weapon_name: String):
+	Current_Weapon = Weapon_List[weapon_name]
+	Next_Weapon = ""
+	enter()
 
 func _input(event):
-	if event.is_action_pressed("weapon_up"):
+	if event.is_action_released("weapon_up"):
 		Weapon_Indicator = min(Weapon_Indicator+1, Weapon_Stack.size()-1)
 		exit(Weapon_Stack[Weapon_Indicator])
 	
-	if event.is_action_pressed("weapon_down"):
+	if event.is_action_released("weapon_down"):
 		Weapon_Indicator = max(Weapon_Indicator-1,0)
 		exit(Weapon_Stack[Weapon_Indicator])
 
@@ -66,6 +75,9 @@ func _on_animation_player_animation_finished(anim_name):
 		hitbox.monitoring = false
 		animation.play("Idle")
 		can_attack = true
+	
+	if anim_name == Current_Weapon.Deactivate_Anim:
+		Change_Weapon(Next_Weapon)
 
 
 func _on_hitbox_body_entered(body):
