@@ -39,9 +39,10 @@ func enter():
 
 func exit(_next_weapon: String):
 	if _next_weapon != Current_Weapon.Weapon_Name:
+#		print("_next_weapon: ", _next_weapon, "| current_weapon: ", Current_Weapon.Weapon_Name)
 		if animation.get_current_animation() != Current_Weapon.Deactivate_Anim:
 			animation.play(Current_Weapon.Deactivate_Anim)
-			Next_Weapon = _next_weapon
+			Change_Weapon(_next_weapon)
 
 func Change_Weapon(weapon_name: String):
 	Current_Weapon = Weapon_List[weapon_name]
@@ -51,10 +52,14 @@ func Change_Weapon(weapon_name: String):
 func _input(event):
 	if event.is_action_released("weapon_up"):
 		Weapon_Indicator = min(Weapon_Indicator+1, Weapon_Stack.size()-1)
+#		print("mouse up: ", Weapon_Indicator)
+#		print("current wp: ", Weapon_Stack[Weapon_Indicator])
 		exit(Weapon_Stack[Weapon_Indicator])
 	
 	if event.is_action_released("weapon_down"):
 		Weapon_Indicator = max(Weapon_Indicator-1,0)
+#		print("mouse down: ", Weapon_Indicator)
+#		print("current wp: ", Weapon_Stack[Weapon_Indicator])
 		exit(Weapon_Stack[Weapon_Indicator])
 
 func _process(_delta):
